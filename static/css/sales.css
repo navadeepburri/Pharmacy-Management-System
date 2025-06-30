@@ -1,0 +1,75 @@
+/* General dark dashboard background */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dashboard cards */
+.card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #c0c0c0;
+}
+
+.card p {
+  margin: 5px 0 0 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Table container */
+.recent-sales {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+/* Table title */
+.recent-sales h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Table styling */
+#recent-sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+}
+
+#recent-sales-table th, 
+#recent-sales-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+#recent-sales-table th {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+#recent-sales-table tr:nth-child(even) {
+  background-color: #252525;
+}
+
+#recent-sales-table tr:nth-child(odd) {
+  background-color: #1b1b1b;
+}
+
+#recent-sales-table tr:hover {
+  background-color: #333333;
+}

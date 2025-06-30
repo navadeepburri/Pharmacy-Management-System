@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Company{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-danger">Delete Company</h2>
+    <p>Are you sure you want to delete the following company?</p>
+
+    <ul class="list-group mb-3">
+        <li class="list-group-item">
+            <strong>Name:</strong> {{ company.NAME }}
+        </li>
+        <li class="list-group-item">
+            <strong>Address:</strong> {{ company.ADDRESS }}
+        </li>
+        <li class="list-group-item">
+            <strong>Phone:</strong> {{ company.PHONE }}
+        </li>
+    </ul>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Confirm Delete
+        </button>
+        <a href="{{ cancel_url }}" class="btn btn-secondary">
+            Cancel
+        </a>
+    </form>
+</div>
+{% endblock %}

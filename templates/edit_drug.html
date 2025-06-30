@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Drug{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4>Edit Drug</h4>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="{{ submit_url }}">
+            <div class="mb-3">
+                <label for="NAME" class="form-label">Drug Name</label>
+                <input type="text" class="form-control" id="NAME" name="name" value="{{ drug.NAME }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="TYPE" class="form-label">Type</label>
+                <input type="text" class="form-control" id="TYPE" name="type" value="{{ drug.TYPE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="BARCODE" class="form-label">Barcode</label>
+                <input type="text" class="form-control" id="BARCODE" name="barcode" value="{{ drug.BARCODE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="CODE" class="form-label">Code</label>
+                <input type="text" class="form-control" id="CODE" name="code" value="{{ drug.CODE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="SELLING_PRICE" class="form-label">Selling Price</label>
+                <input type="number" step="0.01" class="form-control" id="SELLING_PRICE" name="selling_price" value="{{ drug.SELLING_PRICE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="COST_PRICE" class="form-label">Cost Price</label>
+                <input type="number" step="0.01" class="form-control" id="COST_PRICE" name="cost_price" value="{{ drug.COST_PRICE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="QUANTITY" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="QUANTITY" name="quantity" value="{{ drug.QUANTITY }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="EXPIRATION_DATE" class="form-label">Expiration Date</label>
+                <input type="date" class="form-control" id="EXPIRATION_DATE" name="expiration_date" value="{{ drug.EXPIRATION_DATE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="PRODUCTION_DATE" class="form-label">Production Date</label>
+                <input type="date" class="form-control" id="PRODUCTION_DATE" name="production_date" value="{{ drug.PRODUCTION_DATE}}" required>
+            </div>
+            <div class="mb-3">
+                <label for="PLACE" class="form-label">Place</label>
+                <input type="text" class="form-control" id="PLACE" name="place" value="{{ drug.PLACE }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="COMPANY_NAME" class="form-label">Company</label>
+                <select class="form-select" id="COMPANY_NAME" name="company_name" required>
+                    <option value="">Select Company</option>
+                    {% for company in companies %}
+                    <option value="{{ company }}" {% if company == drug.COMPANY_NAME %}selected{% endif %}>{{ company }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="DOSE" class="form-label">Dose</label>
+                <input type="text" class="form-control" id="DOSE" name="dose" value="{{ drug.DOSE }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Drug</button>
+            <a href="{{ url_for('drugs') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

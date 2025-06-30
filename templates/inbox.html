@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Inbox</h1>
+   
+    {% if messages %}
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in messages %}
+            <tr>
+                <td>{{ msg.MESSAGE_FROM }}</td>
+                <td>{{ msg.MESSAGE_TO }}</td>
+                <td>{{ msg.MESSAGE_TEXT }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info">No messages found.</div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+:root {
+  /* Font */
+  --font-main: 'Poppins', sans-serif;
+
+  /* Colors */
+  --primary-color: #117A65;
+  --primary-dark: #0e5d51;
+  --danger-color: #dc3545;
+  --light-bg: #f9fcfc;
+  --dark-text: #2c3e50;
+  --border-color: #dcdcdc;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+
+  /* Effects */
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,249 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --text-color: #333333;
+    --light-gray: #f5f7fa;
+    --border-color: #e1e5eb;
+    --hover-bg: #eaf4fb;
+    --even-row-bg: #f9fcfd;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+.sidebar-header {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.nav-links {
+    list-style: none;
+    padding: 20px 0;
+}
+.nav-links li {
+    margin-bottom: 5px;
+}
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+.nav-links a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.nav-links a:hover {
+    background-color: var(--hover-bg);
+}
+.nav-links .active a {
+    background-color: var(--primary-color);
+    color: white;
+}
+.nav-links .active a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Content */
+.content {
+    margin-left: var(--sidebar-width);
+    padding: 40px 30px;
+    flex-grow: 1;
+}
+.content h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+h2 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+
+/* Tables */
+.summary-table,
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+.summary-table th,
+.sales-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 14px;
+    text-align: center;
+}
+.summary-table td,
+.sales-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+}
+.sales-table tr:nth-child(even),
+.summary-table tr:nth-child(even) {
+    background-color: var(--even-row-bg);
+}
+.sales-table tr:hover,
+.summary-table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Stat Cards */
+.stat-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+}
+.stat-card h6 {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    .sidebar-header {
+        font-size: 0;
+    }
+    .nav-links a span {
+        display: none;
+    }
+    .nav-links a i {
+        margin-right: 0;
+        font-size: 1.4rem;
+    }
+    .content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+    --primary-color: #1abc9c;
+    --secondary-color: #16a085;
+    --text-color: #ecf0f1;
+    --light-gray: #1e272e;
+    --border-color: #34495e;
+    --hover-bg: #2d3e4f;
+    --even-row-bg: #27343d;
+    --card-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+    background-color: #121212;
+    color: var(--text-color);
+}
+
+body.dark-mode .sidebar {
+    background-color: var(--light-gray);
+}
+body.dark-mode .sidebar-header,
+body.dark-mode .nav-links a,
+body.dark-mode .content h1,
+body.dark-mode h2 {
+    color: var(--text-color) !important;
+}
+body.dark-mode .nav-links a:hover {
+    background-color: #2f3e46;
+}
+body.dark-mode .nav-links .active a {
+    background-color: var(--primary-color);
+    color: white;
+}
+body.dark-mode .summary-table,
+body.dark-mode .sales-table,
+body.dark-mode .stat-card {
+    background-color: #222831 !important;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+body.dark-mode .summary-table th,
+body.dark-mode .sales-table th {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+body.dark-mode .sales-table td,
+body.dark-mode .summary-table td {
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+    opacity: 1 !important;
+}
+body.dark-mode .sales-table tr:nth-child(even),
+body.dark-mode .summary-table tr:nth-child(even) {
+    background-color: var(--even-row-bg);
+}
+body.dark-mode .sales-table tr:hover,
+body.dark-mode .summary-table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Forms in dark mode */
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid var(--border-color);
+}
+body.dark-mode ::placeholder {
+    color: #b0b0b0;
+}
+body.dark-mode button,
+body.dark-mode label {
+    color: var(--text-color) !important;
+}
+/* Override Bootstrap's table styles in dark mode */
+body.dark-mode table,
+body.dark-mode table td,
+body.dark-mode table th {
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: var(--even-row-bg) !important;
+}

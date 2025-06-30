@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Add Sale{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Add New Sale</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('add_sale') }}">
+        <div class="mb-3">
+            <label for="barcode" class="form-label">Select Drug</label>
+            <select class="form-select" name="barcode" id="barcode" required>
+                <option value="" disabled selected>-- Select a Drug --</option>
+                {% for drug in drugs %}
+                <option value="{{ drug.BARCODE }}">{{ drug.NAME }} ({{ drug.BARCODE }})</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="quantity" min="1" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-save"></i> Add 
+        </button>
+        <a href="{{ url_for('sales') }}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Cancel
+        </a>
+    </form>
+</div>
+{% endblock %}
