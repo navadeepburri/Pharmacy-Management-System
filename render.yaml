@@ -1,0 +1,19 @@
+﻿services:
+  - type: web
+    name: pharmacy-management-system
+    env: python
+    plan: free
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: DB_HOST
+        fromEnvVar: DB_HOST
+      - key: DB_USER
+        fromEnvVar: DB_USER
+      - key: DB_PASSWORD
+        fromEnvVar: DB_PASSWORD
+      - key: DB_NAME
+        fromEnvVar: DB_NAME
+      - key: DB_PORT
+        fromEnvVar: DB_PORT
