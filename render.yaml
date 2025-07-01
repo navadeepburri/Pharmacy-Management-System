@@ -8,12 +8,12 @@
     startCommand: "gunicorn app:app"
     envVars:
       - key: DB_HOST
-        fromEnvVar: DB_HOST
+        value: 127.0.0.1
       - key: DB_USER
-        fromEnvVar: DB_USER
+        value: root
       - key: DB_PASSWORD
-        fromEnvVar: DB_PASSWORD
+        value: your_mysql_password
       - key: DB_NAME
-        fromEnvVar: DB_NAME
+        value: pharmacy
       - key: DB_PORT
-        fromEnvVar: DB_PORT
+        value: 3306
