@@ -18,9 +18,9 @@ DB_CONFIG = {
     'port': 3306
 }
 # ✅ Email Configuration (paste here)
-EMAIL_SENDER = 'nandhuburri2005@gmail.com'
-EMAIL_PASSWORD = 'pxaecszitguoirvn'  # App password from Gmail
-EMAIL_RECEIVER = 'nandhuburri2005@gmail.com'  # Your personal/admin email
+EMAIL_SENDER = '@gmail.com'
+EMAIL_PASSWORD = 'vhjnbhjbhjnj'  # App password from Gmail
+EMAIL_RECEIVER = '@gmail.com'  # Your personal/admin email
 
 # === 3. EMAIL FUNCTION ===
 def send_login_notification(username, role):
